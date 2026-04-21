@@ -1,0 +1,15 @@
+[facts_example, scheduler].
+active_workstations(morning, X).
+active_workstations(evening, X).
+employee_allowed(alice, morning, register).
+employee_allowed(alice, morning, kitchen).
+employee_allowed(carla, night, register).
+employee_allowed(ella, morning, register).
+
+[facts_test2, scheduler].
+active_workstations(night, X).
+employee_allowed(amy, evening, packing).
+employee_allowed(brad, morning, frontdesk).
+
+[facts_unsat, scheduler].
+workstation(main, Min, Max).
