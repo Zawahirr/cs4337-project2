@@ -14,3 +14,15 @@ This project is a Prolog scheduling backend. The main requirement is to implemen
 
 ### Notes during session
 I want to avoid writing too much scheduling logic too early. Today should focus on file setup, facts, and helper predicates that will support the full plan/1 implementation later.
+
+## 2026-04-21 6:30 PM
+
+### Reflection
+I completed the initial repository setup and created all base project files. I added multiple facts files so I can test more than one scenario later, including one impossible case for checking failure behavior. I also added starter helper predicates in `scheduler.pl` to check whether employees are allowed on shifts and workstations and to collect active workstations for a shift.
+
+One thing I paid attention to was the project hint about optional predicates possibly not being defined. I used fallback rules with `fail` so missing facts like `workstation_idle/2` or `avoid_shift/2` will not crash SWI-Prolog.
+
+I tested the helper predicates in SWI-Prolog and confirmed that idle workstations are filtered correctly and avoid rules behave the way I expected.
+
+### Next session
+Next session I want to begin building the assignment logic for one shift. That means choosing valid employees for a workstation while respecting the workstation min/max values and shift/workstation restrictions.
