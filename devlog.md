@@ -41,3 +41,17 @@ I want to build this in stages. Instead of jumping directly to the full plan/1 p
 - Build a predicate that assigns employees across all active workstations for one shift
 - Add test queries for single-shift scheduling
 - Update the README to reflect Day 2 progress
+
+## 2026-04-22 8:45 PM
+
+### Reflection
+Today I moved from helper predicates into actual scheduling logic for one shift. I added a predicate for selecting a specific number of valid employees for a workstation and a predicate for assigning employees across the active workstations of a shift.
+
+The main idea today was to keep working from a remaining employee pool. When employees are assigned to one workstation, they are removed from the available list before the next workstation is processed. This should help later when I need to guarantee that each employee is used exactly once overall.
+
+I tested the new logic with the sample facts files and confirmed that the results are shaped like workstation(Workstation, EmployeeList) terms. I also confirmed that idle workstations stay excluded because the shift builder depends on active_workstations/2.
+
+One thing I still need to be careful about is that Day 2 only solves one shift at a time. The final project still requires plan/1 to connect morning, evening, and night and ensure every employee works exactly one workstation for exactly one shift.
+
+### Next session
+Next session I want to build the full plan/1 predicate by chaining together morning, evening, and night scheduling from one shared employee pool.
