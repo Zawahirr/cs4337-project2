@@ -26,3 +26,18 @@ I tested the helper predicates in SWI-Prolog and confirmed that idle workstation
 
 ### Next session
 Next session I want to begin building the assignment logic for one shift. That means choosing valid employees for a workstation while respecting the workstation min/max values and shift/workstation restrictions.
+
+## 2026-04-22 8:00 PM
+
+### Thoughts so far
+Day 1 gave me a clean starting point. I now have the facts files, README, test queries, and helper predicates for checking shift and workstation restrictions. The next major step is to move from checking constraints to actually constructing part of a schedule.
+
+I want to build this in stages. Instead of jumping directly to the full plan/1 predicate, I want to first solve the smaller problem of assigning employees to the active workstations for one shift.
+
+### Plan for this session
+- Add predicates that select valid employees for a workstation
+- Respect avoid_shift and avoid_workstation restrictions while selecting employees
+- Respect workstation minimum and maximum staffing limits
+- Build a predicate that assigns employees across all active workstations for one shift
+- Add test queries for single-shift scheduling
+- Update the README to reflect Day 2 progress
