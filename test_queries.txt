@@ -13,3 +13,20 @@ employee_allowed(brad, morning, frontdesk).
 
 [facts_unsat, scheduler].
 workstation(main, Min, Max).
+
+[facts_example, scheduler].
+select_employees_for_workstation(1, morning, register, [alice,bob,carla], Remaining, Employees).
+select_employees_for_workstation(2, evening, kitchen, [alice,bob,carla,dan,ella,faris], Remaining, Employees).
+
+[facts_example, scheduler].
+active_workstations(evening, WS).
+assign_workstations(WS, evening, [alice,bob,carla,dan,ella,faris], Remaining, Schedule).
+
+[facts_example, scheduler].
+build_shift_schedule(morning, [alice,bob,carla,dan,ella,faris], Remaining, Schedule).
+
+[facts_test2, scheduler].
+build_shift_schedule(evening, [amy,brad,chris,dina,eric,faiza], Remaining, Schedule).
+
+[facts_test2, scheduler].
+build_shift_schedule(night, [amy,brad,chris,dina,eric,faiza], Remaining, Schedule).

@@ -17,12 +17,13 @@ Each shift should be a list of `workstation(Workstation, EmployeeList)` terms.
 - `test_queries.txt` - sample queries used during development
 - `devlog.md` - development log for all sessions
 
-## Day 1 status
-Repository setup, sample facts, helper predicates, and starter tests.
+## Progress
+- Day 1: repository setup, sample facts, helper predicates, starter tests
+- Day 2: employee selection logic and single-shift assignment logic
 
 ## How to run
 Using SWI-Prolog:
 
 ```prolog
 ?- [facts_example, scheduler].
-?- active_workstations(morning, X).
+?- build_shift_schedule(morning, [alice,bob,carla,dan,ella,faris], Remaining, Schedule).
