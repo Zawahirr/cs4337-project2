@@ -30,3 +30,15 @@ build_shift_schedule(evening, [amy,brad,chris,dina,eric,faiza], Remaining, Sched
 
 [facts_test2, scheduler].
 build_shift_schedule(night, [amy,brad,chris,dina,eric,faiza], Remaining, Schedule).
+
+[facts_example, scheduler].
+plan(P).
+
+[facts_test2, scheduler].
+plan(P).
+
+[facts_unsat, scheduler].
+plan(P).
+
+[facts_example, scheduler].
+plan(plan(Morning, Evening, Night)).

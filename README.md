@@ -20,10 +20,11 @@ Each shift should be a list of `workstation(Workstation, EmployeeList)` terms.
 ## Progress
 - Day 1: repository setup, sample facts, helper predicates, starter tests
 - Day 2: employee selection logic and single-shift assignment logic
+- Day 3: full plan/1 implementation across morning, evening, and night
 
 ## How to run
 Using SWI-Prolog:
 
 ```prolog
 ?- [facts_example, scheduler].
-?- build_shift_schedule(morning, [alice,bob,carla,dan,ella,faris], Remaining, Schedule).
+?- plan(P).
