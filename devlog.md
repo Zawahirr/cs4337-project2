@@ -55,3 +55,18 @@ One thing I still need to be careful about is that Day 2 only solves one shift a
 
 ### Next session
 Next session I want to build the full plan/1 predicate by chaining together morning, evening, and night scheduling from one shared employee pool.
+
+## 2026-04-23 7:00 PM
+
+### Thoughts so far
+At this point I can build a schedule for one shift from a pool of available employees. The remaining task is to connect the three shifts together in the required order and enforce the project rule that every employee must work exactly one workstation for exactly one shift.
+
+The Day 2 predicates already remove employees from the available list as they are assigned, so I should be able to reuse that idea by passing the remaining list from morning to evening and then from evening to night.
+
+### Plan for this session
+- Add a predicate that schedules one shift from the current employee pool
+- Chain morning, evening, and night together
+- Implement the final plan/1 predicate in the required structure
+- Ensure the final result only succeeds when all employees are assigned
+- Add tests for successful and failing plan/1 queries
+- Update the README to reflect Day 3 progress
