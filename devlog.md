@@ -56,7 +56,7 @@ One thing I still need to be careful about is that Day 2 only solves one shift a
 ### Next session
 Next session I want to build the full plan/1 predicate by chaining together morning, evening, and night scheduling from one shared employee pool.
 
-## 2026-04-23 7:00 PM
+## 2026-04-23 6:25 PM
 
 ### Thoughts so far
 At this point I can build a schedule for one shift from a pool of available employees. The remaining task is to connect the three shifts together in the required order and enforce the project rule that every employee must work exactly one workstation for exactly one shift.
@@ -70,3 +70,15 @@ The Day 2 predicates already remove employees from the available list as they ar
 - Ensure the final result only succeeds when all employees are assigned
 - Add tests for successful and failing plan/1 queries
 - Update the README to reflect Day 3 progress
+
+## 2026-04-23 6:40 PM
+
+### Reflection
+Today I connected the single-shift scheduling logic into the full project predicate plan/1. The plan now starts with the full employee list, schedules the morning shift, then schedules evening from the remaining employees, and finally schedules night from the remaining employees after evening.
+
+The key idea today was using the remaining employee pool to enforce that employees are not reused. Requiring the remaining list after the night shift to be empty is what enforces that every employee is assigned exactly once overall.
+
+I tested the final plan/1 predicate with the example datasets and also tested an unsatisfiable dataset to confirm that the predicate fails when no valid plan can be built. This feels much closer to the full assignment now because the code is producing schedules in the required plan(Morning, Evening, Night) form.
+
+### Next session
+Next session I want to focus on cleanup, stronger edge-case testing, and making sure the repository is polished for grading. I also want to verify that the README and devlog clearly explain the work and that the final repository will be easy for a TA to run.
