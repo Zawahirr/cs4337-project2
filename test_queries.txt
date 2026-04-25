@@ -16,20 +16,13 @@ workstation(main, Min, Max).
 
 [facts_example, scheduler].
 select_employees_for_workstation(1, morning, register, [alice,bob,carla], Remaining, Employees).
-select_employees_for_workstation(2, evening, kitchen, [alice,bob,carla,dan,ella,faris], Remaining, Employees).
-
-[facts_example, scheduler].
-active_workstations(evening, WS).
-assign_workstations(WS, evening, [alice,bob,carla,dan,ella,faris], Remaining, Schedule).
+select_employees_for_workstation(2, morning, kitchen, [alice,bob,carla,dan,ella,faris], Remaining, Employees).
 
 [facts_example, scheduler].
 build_shift_schedule(morning, [alice,bob,carla,dan,ella,faris], Remaining, Schedule).
 
 [facts_test2, scheduler].
-build_shift_schedule(evening, [amy,brad,chris,dina,eric,faiza], Remaining, Schedule).
-
-[facts_test2, scheduler].
-build_shift_schedule(night, [amy,brad,chris,dina,eric,faiza], Remaining, Schedule).
+build_shift_schedule(morning, [amy,brad,chris,dina,eric,faiza], Remaining, Schedule).
 
 [facts_example, scheduler].
 plan(P).
@@ -42,23 +35,3 @@ plan(P).
 
 [facts_example, scheduler].
 plan(plan(Morning, Evening, Night)).
-
-[facts_example, scheduler].
-plan(P).
-
-[facts_example, scheduler].
-plan(plan(Morning, Evening, Night)).
-
-[facts_example, scheduler].
-schedule_shift(morning, [alice,bob,carla,dan,ella,faris], Remaining, Morning).
-
-[facts_example, scheduler].
-active_workstations(morning, X).
-active_workstations(evening, Y).
-active_workstations(night, Z).
-
-[facts_test2, scheduler].
-plan(P).
-
-[facts_unsat, scheduler].
-plan(P).

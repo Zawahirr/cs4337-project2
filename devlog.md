@@ -94,3 +94,12 @@ The main scheduling logic is now implemented. The final step is to make sure the
 - Finalize the README with file descriptions and command-line instructions
 - Make sure the repository is clean and ready to zip for submission
 - Add a final devlog reflection about the completed project
+
+## 2026-04-25 3:00 AM
+
+### Reflection
+Today I focused on final cleanup, test coverage, and documentation. The main scheduling logic was already complete, so this session was about making the repository easier to grade and making sure I had clearly documented how the project was built over time.
+
+I reviewed the scheduler file, updated the test queries, and finalized the README with file descriptions and instructions for running the project from SWI-Prolog. I also re-tested the project on both satisfiable and unsatisfiable facts files to confirm that valid schedules succeed and impossible ones fail.
+
+At this point the project feels ready for submission. The repository now includes the main logic, multiple facts files for testing, a devlog covering each session, and a commit history that reflects gradual development instead of a single final upload.

@@ -10,6 +10,9 @@ workstation(kitchen, 2, 3).
 workstation(cleaning, 1, 2).
 
 workstation_idle(cleaning, morning).
+workstation_idle(cleaning, night).
+workstation_idle(kitchen, evening).
+workstation_idle(kitchen, night).
 
 avoid_workstation(alice, kitchen).
 avoid_workstation(dan, register).

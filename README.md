@@ -20,15 +20,20 @@ The solution uses facts from a consulted file and constructs schedules that resp
 
 ## Files
 - `scheduler.pl` - main Prolog scheduling logic
-- `facts_example.pl` - first example facts file
-- `facts_test2.pl` - second example facts file
+- `facts_example.pl` - satisfiable example facts file
+- `facts_test2.pl` - second satisfiable facts file
 - `facts_unsat.pl` - unsatisfiable facts file used to test failure
 - `test_queries.txt` - development and testing queries
 - `devlog.md` - session-by-session development log
 
 ## How to run
-Using SWI-Prolog from the command line:
 
+### Interactive mode
 ```prolog
 ?- [facts_example, scheduler].
 ?- plan(P).
+
+### Command-line mode
+swipl -q -s facts_example.pl -s scheduler.pl -g "plan(P), writeln(P), halt."
+swipl -q -s facts_test2.pl -s scheduler.pl -g "plan(P), writeln(P), halt."
+swipl -q -s facts_unsat.pl -s scheduler.pl -g "(plan(P) -> writeln(P) ; writeln('no plan')), halt."
