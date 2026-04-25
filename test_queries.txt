@@ -42,3 +42,23 @@ plan(P).
 
 [facts_example, scheduler].
 plan(plan(Morning, Evening, Night)).
+
+[facts_example, scheduler].
+plan(P).
+
+[facts_example, scheduler].
+plan(plan(Morning, Evening, Night)).
+
+[facts_example, scheduler].
+schedule_shift(morning, [alice,bob,carla,dan,ella,faris], Remaining, Morning).
+
+[facts_example, scheduler].
+active_workstations(morning, X).
+active_workstations(evening, Y).
+active_workstations(night, Z).
+
+[facts_test2, scheduler].
+plan(P).
+
+[facts_unsat, scheduler].
+plan(P).

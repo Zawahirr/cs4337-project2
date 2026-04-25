@@ -40,13 +40,12 @@ assign_workstations([ws(W, Min, Max)|Rest], Shift, Available, Remaining, [workst
     select_employees_for_workstation(Count, Shift, W, Available, AfterThisStation, Employees),
     assign_workstations(Rest, Shift, AfterThisStation, Remaining, ScheduleRest).
 
-build_shift_schedule(Shift, Available, Remaining, Schedule) :-
-    active_workstations(Shift, ActiveStations),
-    assign_workstations(ActiveStations, Shift, Available, Remaining, Schedule).
-
 schedule_shift(Shift, Available, Remaining, Schedule) :-
     active_workstations(Shift, ActiveStations),
     assign_workstations(ActiveStations, Shift, Available, Remaining, Schedule).
+
+build_shift_schedule(Shift, Available, Remaining, Schedule) :-
+    schedule_shift(Shift, Available, Remaining, Schedule).
 
 plan(plan(Morning, Evening, Night)) :-
     findall(E, employee(E), Employees),
