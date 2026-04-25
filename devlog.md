@@ -56,7 +56,7 @@ One thing I still need to be careful about is that Day 2 only solves one shift a
 ### Next session
 Next session I want to build the full plan/1 predicate by chaining together morning, evening, and night scheduling from one shared employee pool.
 
-## 2026-04-23 6:25 PM
+## 2026-04-24 6:25 PM
 
 ### Thoughts so far
 At this point I can build a schedule for one shift from a pool of available employees. The remaining task is to connect the three shifts together in the required order and enforce the project rule that every employee must work exactly one workstation for exactly one shift.
@@ -71,7 +71,7 @@ The Day 2 predicates already remove employees from the available list as they ar
 - Add tests for successful and failing plan/1 queries
 - Update the README to reflect Day 3 progress
 
-## 2026-04-23 6:40 PM
+## 2026-04-24 6:40 PM
 
 ### Reflection
 Today I connected the single-shift scheduling logic into the full project predicate plan/1. The plan now starts with the full employee list, schedules the morning shift, then schedules evening from the remaining employees, and finally schedules night from the remaining employees after evening.
@@ -82,3 +82,15 @@ I tested the final plan/1 predicate with the example datasets and also tested an
 
 ### Next session
 Next session I want to focus on cleanup, stronger edge-case testing, and making sure the repository is polished for grading. I also want to verify that the README and devlog clearly explain the work and that the final repository will be easy for a TA to run.
+
+## 2026-04-25 2:45 AM
+
+### Thoughts so far
+The main scheduling logic is now implemented. The final step is to make sure the project is polished, easy to grade, and clearly documented. I want to focus on cleanup, stronger test coverage, and making sure the README and devlog accurately show the development process.
+
+### Plan for this session
+- Review scheduler.pl for any small cleanup opportunities
+- Add more test queries for shape checking and failure cases
+- Finalize the README with file descriptions and command-line instructions
+- Make sure the repository is clean and ready to zip for submission
+- Add a final devlog reflection about the completed project
